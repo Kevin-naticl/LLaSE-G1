@@ -184,7 +184,7 @@ class WavLM_feat(object):
 
             return feat
 
-    def _reload_wavLM_large(self, path="/home/bykang/WavLM-Large.pt", device: Optional[torch.device] = None):
+    def _reload_wavLM_large(self, path="./ckpt/codec_ckpt/WavLM-Large.pt", device: Optional[torch.device] = None):
         cpt = torch.load(path, map_location="cpu")
         cfg = WavLMConfig(cpt['cfg'])
         wavLM = WavLM(cfg)
